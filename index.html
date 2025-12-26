@@ -1,163 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8" />
-    <title>CV - Ouleymatou KONE KANTE</title>
+    <title>Ouleymatou - Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
-        /* --- STYLE GLOBAL (Thème GitHub Dark) --- */
+        /* --- ESTHÉTIQUE PASTEL & WAW --- */
+        :root {
+            --bg-color: #fff0f5; /* Rose très pâle (Lavender Blush) */
+            --card-bg: #ffffff;
+            --text-main: #555;
+            --text-title: #333;
+            --accent-pink: #ffb7b2;
+            --accent-purple: #e0bbe4;
+            --gradient: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: #0d1117; /* Fond très sombre */
-            color: #c9d1d9; /* Texte gris clair lisible */
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom right, #fff0f5, #f3e5f5); /* Dégradé subtil fond */
+            color: #555;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.7;
+        }
+
+        .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
-            line-height: 1.6;
         }
 
-        /* --- TITRES --- */
+        /* --- EN-TÊTE --- */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
         h1 {
-            color: #ffffff;
-            font-size: 2.5em;
-            margin-bottom: 0.2em;
-            border-bottom: 1px solid #30363d;
-            padding-bottom: 20px;
-        }
-        h2 {
-            margin-top: 50px;
-            color: #58a6ff; /* Bleu GitHub */
-            border-bottom: 1px solid #30363d;
-            padding-bottom: 10px;
-        }
-        h3 {
-            color: #ffffff;
-            font-size: 1.2em;
-            margin-bottom: 5px;
+            font-size: 3em;
+            margin-bottom: 10px;
+            /* Effet WAW : Texte en dégradé */
+            background: -webkit-linear-gradient(45deg, #ff9a9e, #c77dff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
         }
 
-        /* --- LIENS --- */
-        a {
-            color: #58a6ff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* --- SECTIONS PROJETS (Cartes) --- */
-        .project-card {
-            border: 1px solid #30363d;
-            background-color: #161b22; /* Fond légèrement plus clair que le body */
-            padding: 20px;
-            border-radius: 6px;
-            margin-bottom: 20px;
-        }
-        .project-tech {
-            font-size: 0.9em;
-            color: #8b949e;
-            font-style: italic;
-        }
-
-        /* --- TAGS COMPETENCES --- */
-        .skill-tag {
-            display: inline-block;
-            background-color: #21262d;
-            border: 1px solid #30363d;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            margin-right: 5px;
-            margin-bottom: 5px;
-            color: #58a6ff;
-        }
-
-        /* --- SOUS-TITRES ET DATES --- */
         .subtitle {
-            font-size: 1.1em;
-            color: #8b949e;
-            margin-bottom: 20px;
+            font-size: 1.2em;
+            color: #888;
+            font-weight: 300;
         }
-        .date {
-            float: right;
-            font-size: 0.9em;
-            color: #8b949e;
+
+        .social-links a {
+            color: #ff9a9e;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .social-links a:hover {
+            color: #c77dff;
+        }
+
+        /* --- INTRO --- */
+        .intro-box {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(255, 183, 178, 0.2); /* Ombre rose douce */
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            color: #444;
+            font-size: 1.5em;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            border-left: 5px solid #ffb7b2; /* Petite barre rose à gauche */
+            padding-left: 15px;
+        }
+
+        /* --- CARTES PROJETS (STYLE SOFT) --- */
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #fff;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px); /* La carte monte un peu */
+            box-shadow: 0 15px 30px rgba(255, 154, 158, 0.2);
+        }
+
+        .project-title {
+            color: #444;
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Badges colorés mignons */
+        .badge {
+            font-size: 0.75em;
+            padding: 5px 12px;
+            border-radius: 15px;
+            color: white;
+            background: #ffb7b2; /* Rose par défaut */
+            margin-left: 10px;
+            font-weight: 400;
+        }
+
+        .badge-luxe { background: linear-gradient(45deg, #c77dff, #ff9a9e); } /* Violet/Rose */
+        .badge-stikkuad { background: #95e1d3; } /* Vert menthe */
+        .badge-tech { background: #e0bbe4; } /* Lilas */
+
+        .description {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            color: #aaa;
+            font-size: 0.8em;
         }
     </style>
 </head>
 
 <body>
 
-    <h1>Ouleymatou KONE KANTE</h1>
-    <p class="subtitle">Student in AI & Organizational Sciences – Paris Dauphine</p>
-    
-    <p>
-        <a href="https://github.com/yelouk">GitHub</a> | 
-        <a href="#">LinkedIn</a> | 
-        <a href="mailto:votre-email@exemple.com">Email</a>
-    </p>
+<div class="container">
 
-    <h2>About Me</h2>
-    <p>
-        Student with a strong interest in <strong>data analysis</strong> and <strong>machine learning</strong>, 
-        combining a background in management with technical skills. 
-        Currently seeking an apprenticeship (alternance) or master program in data-related fields starting September 2025.
-    </p>
+    <header>
+        <h1>Ouleymatou KONE KANTE</h1>
+        <div class="subtitle">IA & Stratégie • Paris Dauphine</div>
+        <div class="social-links" style="margin-top: 15px;">
+            <a href="https://github.com/yelouk">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="mailto:ton-email@gmail.com">Contact</a>
+        </div>
+    </header>
 
-    <h2>Education</h2>
-    
-    <div class="project-card">
-        <span class="date">2023 - Present</span>
-        <h3>Université Paris Dauphine - PSL</h3>
-        <p class="project-tech">Master / Licence in AI & Organizational Sciences</p>
-        <ul>
-            <li>Focus: Data Science, Algorithms, Management Strategy.</li>
-            <li>Key Courses: Python for Data Analysis, Linear Algebra, Statistics.</li>
-        </ul>
-    </div>
-
-    <h2>Academic & Personal Projects</h2>
-
-    <div class="project-card">
-        <h3>Pricing Optimization with Machine Learning</h3>
-        <p class="project-tech">Tech stack: Python, Scikit-Learn, Pandas</p>
-        <p>
-            Developed a model to predict optimal pricing strategies based on historical sales data.
+    <div class="intro-box">
+        <p style="font-size: 1.1em; color: #555;">
+            ✨ <strong>Ma philosophie ?</strong><br>
+            Je ne suis pas juste là pour coder. J'aime prendre des données brutes (et souvent chaotiques) pour en faire quelque chose de clair, d'utile et de beau. Je fais le pont entre les maths complexes et le monde réel.
         </p>
-        <ul>
-            <li>Cleaned and pre-processed a dataset of over 10,000 entries.</li>
-            <li>Implemented regression algorithms to forecast demand elasticity.</li>
-            <li>Result: Improved theoretical margin by 5% in simulation.</li>
-        </ul>
+    </div>
+
+    <h2>Mes Projets Data</h2>
+
+    <div class="project-card">
+        <div class="project-title">
+            Le Score de Désirabilité
+            <span class="badge badge-luxe">Projet Perso & Luxe</span>
+        </div>
+        <p class="description">
+            C'est mon projet coup de cœur. Je me suis demandé : <strong>"Peut-on mesurer la hype ?"</strong><br>
+            Les maisons de luxe reposent sur l'intuition. J'ai voulu y ajouter de la science. Je suis en train de créer un algorithme qui mélange des critères subjectifs (rareté, tendance) pour prédire si un produit va marcher. C'est ma façon de mixer Tech et Glamour.
+        </p>
     </div>
 
     <div class="project-card">
-        <h3>Management Accounting Analysis</h3>
-        <p class="project-tech">Tech stack: Python, Excel, Matplotlib</p>
-        <p>
-            Automated the analysis of financial reports to identify cost-saving opportunities.
+        <div class="project-title">
+            Data Challenge Immobilier
+            <span class="badge badge-tech">Python</span>
+        </div>
+        <p class="description">
+            On nous a donné un fichier Excel illisible avec des milliers de lignes pour prédire des prix.
+            La réalité ? 80% du travail, c'était du nettoyage. J'ai appris à trier le vrai du faux avant même de lancer les calculs. Au final, on a réussi à modéliser le marché, mais surtout à expliquer nos choix au jury.
         </p>
-        <ul>
-            <li>Created Python scripts to automate data extraction from Excel files.</li>
-            <li>Visualized cost distribution using Matplotlib charts.</li>
-        </ul>
     </div>
 
-    <h2>Technical Skills</h2>
-    <div>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">Data Analysis</span>
-        <span class="skill-tag">Machine Learning</span>
-        <span class="skill-tag">SQL</span>
-        <span class="skill-tag">Git & GitHub</span>
-        <span class="skill-tag">English (Fluent)</span>
-        <span class="skill-tag">French (Native)</span>
+    <div class="project-card">
+        <div class="project-title">
+            L'IA Créative (GANs)
+            <span class="badge badge-tech">Recherche</span>
+        </div>
+        <p class="description">
+            Comment une IA peut-elle "inventer" des images ?
+            J'ai plongé dans la recherche sur les réseaux antagonistes (GAN). C'est très mathématique, mais mon but était de vulgariser ça : comprendre comment deux algorithmes "jouent" l'un contre l'autre pour créer de la nouveauté.
+        </p>
     </div>
 
-    <br><br>
-    <footer style="text-align: center; color: #8b949e; font-size: 0.8em;">
-        &copy; 2025 Ouleymatou KONE KANTE - Hosted on GitHub Pages
+    <div class="project-card">
+        <div class="project-title">
+            Dashboard Power BI
+            <span class="badge badge-tech">Visualisation</span>
+        </div>
+        <p class="description">
+            Transformer des colonnes de chiffres en un tableau de bord clair.
+            L'objectif : qu'un décideur puisse regarder l'écran et comprendre la situation en 3 secondes chrono. J'adore ce côté "Design de l'information".
+        </p>
+    </div>
+
+    <h2>Mon Côté Entrepreneur</h2>
+
+    <div class="project-card" style="border-left: 5px solid #95e1d3;">
+        <div class="project-title">
+            Stikkuad
+            <span class="badge badge-stikkuad">Fondatrice</span>
+        </div>
+        <p class="description">
+            Je ne fais pas que de la théorie. J'ai lancé ma propre micro-entreprise.
+            Gestion des stocks, relation client, comptabilité... C'est mon école du terrain. Ça m'apprend à gérer un business réel avec ses imprévus et ses réussites.
+        </p>
+    </div>
+
+    <h2>Ce qui fait la différence</h2>
+    <div class="intro-box" style="text-align: left; background: #fffafb;">
+        <p>
+            🗣 <strong>Je sais expliquer.</strong><br>
+            Sortir un chiffre, c'est bien. Savoir le vendre, c'est mieux. J'aime présenter mes projets, simplifier le jargon technique et convaincre mon auditoire. Pour moi, la communication est aussi importante que le code.
+        </p>
+    </div>
+
+    <footer>
+        🌸 Fait avec douceur par Ouleymatou © 2025
     </footer>
+
+</div>
 
 </body>
 </html>
